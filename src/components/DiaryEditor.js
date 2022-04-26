@@ -15,6 +15,8 @@ const handleSubmit = () => {
     navigate("/", { replace: true });
 };
 
+export default DiaryEditor;
+
 // return (
 //     <div className="DiaryEditor">
 //         <MyHeader
