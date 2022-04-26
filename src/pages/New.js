@@ -1,9 +1,12 @@
+import DiaryEditor from "../components/DiaryEditor";
+
 const New = () => {
-    return (
-        <div>
-            <h1>New</h1>
-            <p>ここはnewです。</p>
-        </div>
-    )
-}
+
+  return (
+    <div>
+      <DiaryEditor />
+    </div>
+  );
+};
+
 export default New;

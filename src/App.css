@@ -1,3 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Jua&family=Yeon+Sung&display=swap');
+
+body{
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Jua', sans-serif;
+  font-family: 'Yeon Sung', cursive;
+  min-height: 100vh;
+  margin: 0px;
+}
+
+@media (min-width:650px) {
+  .App{
+    width: 640px;
+  }
+}
+
+@media (max-width:650px) {
+  .App {
+    width: 90vw;
+  }
+}
+
+#root {
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
 .App {
-  padding: 20px;
+  min-height: 100vh;
+  padding: 0px 20px;
+}
+
+/* MyButton */
+
+.MyButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 7px;
+
+  padding: 10px 20px;
+
+  font-size: 18px;
+
+  white-space: nowrap;
+  font-family: 'Jua', sans-serif;
+}
+
+.MyButton--default{
+  background-color: #ececec;
+  color: black;
+}
+
+.MyButton--positive{
+  background-color: #64c964;
+  color: white;
+}
+
+.MyButton--negative{
+  background-color: #fd565f;
+  color: white;
+}
+
+/* HEADER */
+
+header{
+  padding: 20px 0px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #e2e2e2;
+}
+
+header > div {
+  display: flex;
+}
+
+.head--text{
+  width: 50%;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.head--btn--left{
+  width: 25%;
+  justify-content: start;
+}
+
+.head--btn--right{
+  width: 25%;
+  justify-content: end;
+}
+
+/* DiaryList */
+
+.DiaryList .menu-wrapper{
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.DiaryList .menu-wrapper .right-col{
+  flex-grow: 1;
+}
+
+.DiaryList .menu-wrapper .right-col button{
+  width: 100%;
+}
+
+.DiaryList .ControlMenu {
+  margin-right: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ececec;
+
+  padding: 15px 20px;
+  cursor: pointer;
+
+  font-family: 'Jua', sans-serif;
+  font-size: 16px
+}
+
+/* DiaryItem */
+
+.DiaryItem {
+  padding: 15px 0px;
+  border-bottom: 1px solid rgba(100, 100, 111, 0.2);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.DiaryItem .emotion-img-wrapper {
+  cursor: pointer;
+
+  min-width: 120px;
+  height: 80px;
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.DiaryItem .emotion-img-wrapper--1{
+  background-color: #FD565F;
+}
+
+.DiaryItem .emotion-img-wrapper--2{
+  background-color: #FD8446;
+}
+
+.DiaryItem .emotion-img-wrapper--3{
+  background-color: #FDCE17;
+}
+
+.DiaryItem .emotion-img-wrapper--4{
+  background-color: #9DD772;
+}
+
+.DiaryItem .emotion-img-wrapper--5{
+  background-color: #64C964;
+}
+
+.DiaryItem .emotion-img-wrapper img{
+  width: 66%;
+}
+
+.DiaryItem .info-wrapper {
+  flex-grow: 1;
+  margin-left: 20px;
+  
+  cursor: pointer;
+}
+
+.DiaryItem .diary-date{
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.DiaryItem .diary-content-preview{
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.DiaryItem .btn-wrapper{
+  display: flex;
+  align-items: center;
+
+  min-width: 70px;
+}
+
+/* Diary Editor */
+
+.DiaryEditor{
+
+}
+
+.DiaryEditor section {
+  margin-bottom: 40px;
+}
+
+.DiaryEditor h4{
+  font-size: 22px;
+}
+
+.DiaryEditor .input-box .input-date{
+  border: none;
+  border-radius: 8px;
+  background-color: #ececec;
+  padding: 10px 20px;
+  font-family: 'Jua', sans-serif;
+  font-size: 15px;
+
+  cursor: pointer;
+}
+
+.DiaryEditor .emotion-list-wrapper{
+  display: flex;
+}
+
+.DiaryEditor textarea{
+  font-family: 'Yeon Sung', cursive;
+  font-size: 18px;
+
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 200px;
+  resize: vertical;
+  padding: 15px;
+
+  border: none;
+  border-radius: 10px;
+  background-color: #ececec;
+}
+
+.DiaryEditor .control-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* EmotionItem */
+
+.EmotionItem {
+  cursor: pointer;
+
+  border-radius: 10px;
+  padding: 20px 0px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0px 10px;
+
+}
+
+.EmotionItem img{
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.EmotionItem span{
+  font-size: 18px;
+}
+
+.EmotionItem-off{
+  background-color: #ececec;
+}
+
+.EmotionItem-on--1{
+  background-color: #FD565F;
+  color : white;  
+}
+
+.EmotionItem-on--2{
+  background-color: #FD8446;
+  color : white; 
+}
+
+.EmotionItem-on--3{
+  background-color: #FDCE17;
+  color : white; 
+}
+
+.EmotionItem-on--4{
+  background-color: #9DD772;
+  color : white; 
+}
+
+.EmotionItem-on--5{
+  background-color: #64C964;
+  color : white; 
+}
+
+/* Diary */
+
+.DiaryPage{
+
+}
+
+.DiaryPage section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+
+  margin-bottom: 80px;
+}
+
+.DiaryPage h4{
+  font-size: 22px;
+}
+
+.DiaryPage .diary-img-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #ececec;
+  width: 230px;
+  height: 230px;
+
+  border-radius: 15%;
+}
+
+.DiaryPage .emotion-descript{
+  font-size: 23px;
+  margin-top: 10px;
+  color: white;
+}
+
+.DiaryPage .diary-img-wrapper--1{
+  background-color: #FD565F;
+}
+
+.DiaryPage .diary-img-wrapper--2{
+  background-color: #FD8446;
+}
+
+.DiaryPage .diary-img-wrapper--3{
+  background-color: #FDCE17;
+}
+
+.DiaryPage .diary-img-wrapper--4{
+  background-color: #9DD772;
+}
+
+.DiaryPage .diary-img-wrapper--5{
+  background-color: #64C964;
+}
+
+.DiaryPage .diary-content-wrapper{
+  background-color: #ececec;
+  width: 100%;
+  min-height: 200px;
+  border-radius: 10px;
+
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.DiaryPage .diary-content-wrapper p{
+  padding: 0px 20px;
+  font-size: 20px;
+  line-height: 2;
 }

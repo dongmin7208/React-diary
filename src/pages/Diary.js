@@ -41,12 +41,12 @@ const Diary = () => {
         <div className="DiaryPage">
           <MyHeader 
             headText={`${getStringDate(new Date(data.date))} 기록`} 
-            leftChild = {<MyButton text={"< 뒤로가기"} onClick={() => navigate(-1)}/>}
-            rightChild = {<MyButton text={"수정하기"} onClick={() => navigate(`/edit/${data.id}`)} />}
+            leftChild = {<MyButton text={"< back"} onClick={() => navigate(-1)}/>}
+            rightChild = {<MyButton text={"edit"} onClick={() => navigate(`/edit/${data.id}`)} />}
           />
           <article>
             <section>
-              <h4>오늘의 감정</h4>
+              <h4>today emotion</h4>
               <div className={["diary-img-wrapper", `diary-img-wrapper--${data.emotion}`].join(" ")}>
                 <img src={currentEmotionData.emotion_img} />
                 <div className="emotion-descript">
@@ -55,7 +55,7 @@ const Diary = () => {
               </div>
             </section>
             <section>
-              <h4>오늘의 일기</h4>
+              <h4>today diary</h4>
               <div className="diary-content-wrapper">
                 <p>{data.content}</p>
               </div>
