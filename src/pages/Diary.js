@@ -3,9 +3,12 @@ const Diary = () => {
     const { id } = useParams();
     console.log(id)
     return (
-        <div>
-            <h1>Diary</h1>
-            <p>ここはダイアリです。</p>
+        <div className="DiaryPage">
+            <MyHeader headText={`${getStringDate(new Date(data.date))} 記録`}
+            leftChild={
+                <MyButton text={"<back"} onClick={() => navigate(-1)}/>
+            }
+            />
         </div>
     )
 }
