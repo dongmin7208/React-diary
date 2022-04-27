@@ -1,10 +1,12 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/jsx-no-comment-textnodes */
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DiaryStateContext } from "../App";
 import MyButton from "../components/MyButton";
+import MyHeader from "../components/MyHeader";
 import { getStringDate } from "../util/date";
 import { emotionList } from "../util/emotionList";
-import MyHeader from "../components/MyHeader";
 
 const Diary = () => {
     const { id } = useParams();
@@ -27,7 +29,7 @@ const Diary = () => {
                 navigate("/", {replace : true})
             }
         }
-    },[id, diaryList])
+    },[id, diaryList, navigate])
     if(!data){
         return <div className="DiaryPage">Loding...</div>
     }else{
@@ -42,7 +44,7 @@ const Diary = () => {
           <MyHeader 
             headText={`${getStringDate(new Date(data.date))} 기록`} 
             leftChild = {<MyButton text={"< back"} onClick={() => navigate(-1)}/>}
-            rightChild = {<MyButton text={"edit"} onClick={() => navigate(`/edit/${data.id}`)} />}
+          rightChild = {<MyButton text={"edit"} onClick={() => navigate(`/edit/${data.id}`)} />}
           />
           <article>
             <section>

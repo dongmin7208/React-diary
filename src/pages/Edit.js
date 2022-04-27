@@ -1,18 +1,16 @@
+import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DiaryStateContext } from "../App";
-import { useContext, useEffect, useState } from "react";
 import DiaryEditor from "../components/DiaryEditor";
 
 const Edit = () => {
 
-    const [originData, setOriginData] = useState();
+    const[originData, setOriginData] = useState();
+    const diaryList = useContext(DiaryStateContext);
+    
     const navigate = useNavigate();
     const { id } = useParams();
 
-    console.log("id : ", id)
-    const diaryList = useContext(DiaryStateContext);
-    console.log(id);
-    console.log(diaryList);
 
     useEffect(()=>{
         if (diaryList.length >= 1) {
@@ -24,14 +22,14 @@ const Edit = () => {
                 setOriginData(targetDiary);
             } else {
                 alert("存在していない日記です。")
-                navigate("/", {replace: true});
+                navigate('/', {replace : true});
             }
         }
-    },[id, diaryList]);
+    },[id, diaryList, navigate])
 
     return (
         <div>
-            {originData && <DiaryEditor isEdit={true} originData={originData}/>}
+            {originData && <DiaryEditor isEdit={true} originData={originData} />}
         </div>
     )
 }

@@ -1,11 +1,13 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react/jsx-no-comment-textnodes */
+import React,{useContext} from "react";
+import { useNavigate } from "react-router-dom";
 import { DiaryDispatchContext } from "../App";
 import MyButton from "./MyButton";
-import { useNavigate } from "react-router-dom";
-import React,{useContext} from "react";
 
 const DiaryItem = ({date, emotion, id, content}) =>{
+    
     const navigate = useNavigate()
-
     const{onRemove} = useContext(DiaryDispatchContext)
     const strDate = new Date(parseInt(date)).toLocaleDateString()
 
@@ -34,7 +36,7 @@ const DiaryItem = ({date, emotion, id, content}) =>{
             </div>
             <div className="btn-wrapper">
                 <MyButton text={"edit"} onClick={goEdit} />
-                <MyButton text={"Delete"} type={navigate} onClick={handleRemove} />
+                <MyButton text={'Delete'} type={"negative"} onClick={handleRemove} />
             </div>
         </div>
     )
@@ -44,4 +46,4 @@ const DiaryItem = ({date, emotion, id, content}) =>{
 
 
 
-export default DiaryItem;
+export default React.memo(DiaryItem);
