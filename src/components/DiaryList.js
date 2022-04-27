@@ -4,8 +4,8 @@ import DiaryItem from "./DiaryItem"
 import MyButton from "./MyButton"
 
 const sortOptionList = [
-    {value : "latest", name:"new"},
-    {value : "oldest", name:"old"},
+    {value : "latest", name:"New"},
+    {value : "oldest", name:"Old"},
 ]
 
 const filterOptionList = [
