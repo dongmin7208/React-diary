@@ -14,7 +14,7 @@ const filterOptionList = [
     {value:"bad", name:"all bed"},
 ]
 
-const ControlMenu = ({value, onChange, optionList}) => {
+const ControlMenu = ({value, onChange, optionList,e}) => {
     return(
         <select className="ControlMenu" value={value} onChange={(e.target.value)}>
             {optionList.map((it, index) => (
@@ -51,7 +51,7 @@ const DiaryList = ({DiaryList}) => {
             }
         }
 
-        const copyList = JSON.parse(JSON.stringify(diaryList))
+        const copyList = JSON.parse(JSON.stringify(DiaryList))
         const filteredList = filter === 'all' ? copyList : copyList.filter((it) => filterCallback(it))
         const sortedList = filteredList.sort(compare)
         return sortedList

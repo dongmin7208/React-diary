@@ -1,8 +1,10 @@
 import { DiaryDispatchContext } from "../App";
 import MyButton from "./MyButton";
+import { useNavigate } from "react-router-dom";
+import React,{useContext} from "react";
 
 const DiaryItem = ({date, emotion, id, content}) =>{
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     const{onRemove} = useContext(DiaryDispatchContext)
     const strDate = new Date(parseInt(date)).toLocaleDateString()
@@ -32,7 +34,7 @@ const DiaryItem = ({date, emotion, id, content}) =>{
             </div>
             <div className="btn-wrapper">
                 <MyButton text={"edit"} onClick={goEdit} />
-                <MyButton text={"Delete"} type={negative} onClick={handleRemove} />
+                <MyButton text={"Delete"} type={navigate} onClick={handleRemove} />
             </div>
         </div>
     )
