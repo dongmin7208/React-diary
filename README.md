@@ -2,10 +2,6 @@
 
 ## 環境 React.js18 , CRA, react-router-dom
 
-### npm i
-
-### npm run start
-
 ![1](./public/assets/readme/1.png)
 ![2](./public/assets/readme/2.png)
 ![3](./public/assets/readme/3.png)
