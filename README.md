@@ -1,4 +1,4 @@
-# なぜ作った？ 基本的な React の書き方が入れっているからです。
+# React-Diary
 
 ## 環境 React.js18 , CRA, react-router-dom
 
